@@ -10,28 +10,22 @@ export const MyOrders = (props) => {
 
     const [bookData, setBookData] = useState([]);
     const [name, setName] = useState(null);
-    const [purchaseID, setPurchaseID] = useState("");
+    const [purchaseID, setPurchaseID] = useState(null);
     const [totalCost, setTotalCost] = useState("");
     const [message, setMessage] = useState("");
     const [dataAvailable, setDataAvailable] = useState(false);
-
-
-    let ORDER_ID = null;
-    let tempId = null;
-
+    const [changePurchaseId, setChangePurchaseId] = useState(null)
 
 
     const handleClick = async () => {
 
-        ORDER_ID = tempId;
+        console.log(purchaseID);
 
-        console.log(ORDER_ID);
-
-        await Axios.get(`http://localhost:8080/purchase/purchaseDetail/${ORDER_ID}`)
+        await Axios.get(`http://localhost:8080/purchase/purchaseDetail/${purchaseID}`)
             .then((response) => {
                 console.log(response);
                 setName(response.data.customerName);
-                setPurchaseID(response.data.purchaseId);
+                setPurchaseID(changePurchaseId);
                 setTotalCost(response.data.totalCost);
                 setBookData(response.data.purchasedBooks);
                 setMessage(response.data.message);
@@ -45,10 +39,8 @@ export const MyOrders = (props) => {
 
     const handleDummyClick = (userName) => {
 
-        ORDER_ID = tempId;
-
-        setName(userName);
-        setPurchaseID(ORDER_ID);
+        setName(userName.split("@")[0]);
+        setPurchaseID(changePurchaseId);
         setTotalCost(2665);
         setBookData(fakePurchasedBooks);
         setMessage("Thank you for purchasing !");
@@ -65,7 +57,7 @@ export const MyOrders = (props) => {
 
             <h1 className='center-text'>MY Orders</h1>
             <div className="search-container flex">
-                <input type="text" placeholder='Enter the orderID...' onChange={(e) => { tempId = parseInt(e.target.value); }} />
+                <input type="text" placeholder='Enter the orderID...' onChange={(e) => { setChangePurchaseId(e.target.value) }} />
                 <button onClick={handleClick}>Get Details</button>
                 <button onClick={ () => handleDummyClick(props.userName)}>Get DUMMY Details</button>
             </div>
