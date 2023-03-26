@@ -1,4 +1,4 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate} from "react-router-dom";
 
 
 export const PrivateRoute = ({children, userName}) => {
@@ -6,7 +6,7 @@ export const PrivateRoute = ({children, userName}) => {
     // This cannot be used here as we want to return a component, 
     // after a particular condition is met.
     // Hence using <Navigate/> component
-    const navigateToPage = useNavigate();
+    // const navigateToPage = useNavigate();
 
 
 
