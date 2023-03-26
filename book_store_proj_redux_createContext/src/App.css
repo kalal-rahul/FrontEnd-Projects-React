@@ -1,0 +1,140 @@
+.center-text {
+  text-align: center;
+}
+
+input{
+  padding: 4px;
+}
+
+
+/* -------------  FORM - STYLING  --------------- */
+
+.form-container{
+  border: 2px solid black;
+  padding-block: 20px;
+  padding-inline: 30px;
+  max-width: 300px;
+  margin: auto;
+  transform: translateY(5%);
+}
+
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-item{
+  gap: 15px;
+}
+
+.form-field{
+  gap: 2px;
+}
+
+.error-msg{
+  color: red;
+  margin: 0px;
+}
+
+
+/* -------------  NAVBAR - STYLING  --------------- */
+.flex{
+  display: flex;
+}
+
+.head-container{
+
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.nav-container{
+ gap: 20px;
+ justify-content: flex-end;
+ margin: 20px;
+ font-size: 1.5rem;
+}
+
+
+/* -------------  SEARCH BOX - STYLING  --------------- */
+.search-container{
+  justify-content: center;
+  gap: 10px;
+}
+
+
+
+
+/* -------------  ORDER DETAIL - STYLING  --------------- */
+.order-detail-container{
+  margin: auto;
+  max-width: 600px;
+  border: 2px solid black;
+  margin-top: 20px;
+}
+.order-detail-inner-container{
+  margin: auto;
+  max-width: 500px;
+}
+
+.deatil-head{
+  justify-content: space-between;
+}
+
+
+/* -------------  ORDER DETAIL TABLE - STYLING  --------------- */
+table{
+  margin: auto;
+  margin-block: 20px;
+  border-collapse: collapse;
+}
+
+
+th{
+  border: 1px solid black;
+  padding: 5px;
+}
+
+td{
+  border: 1px solid black;
+  padding: 5px;
+}
+
+
+/* -------------  BOOK SHELF - STYLING  --------------- */
+.book-outer-container{
+  max-width: 1000px;
+  /* border: 2px solid black; */
+  margin: auto;
+  margin-block: 20px;
+  justify-content: space-evenly;
+  flex-wrap:wrap;
+}
+.book-image img{
+  height: 130px;
+  width: 120px;
+}
+
+.book-card{
+  margin: 10px;
+  width: 180px;
+  align-items: center;
+  border: 1px solid #c7c7c7;
+}
+
+.book-card:hover{
+  border: 3px solid #c7c7c7;
+  cursor: pointer;
+}
+
+.book-detail{
+  margin-bottom: 20px;
+}
+
+.order-btn button{
+  margin-block: 20px;
+  margin-left: 43vw;
+  font-size: 1.5rem;
+}
